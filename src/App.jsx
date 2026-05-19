@@ -48,12 +48,12 @@ const content = {
     portfolioLabel: 'PORTFOLIO',
     portfolioTitle: 'Selected Works',
     portfolioItems: [
-      { title: 'Graduation Fashion Film', desc: '한복을 Z세대의 시선으로 재해석한 패션 필름', tag: 'Film' },
-      { title: 'Chanel Haute Couture', desc: '오뜨 꾸뛰르 및 하이 주얼리 이벤트', tag: 'Event' },
-      { title: 'Roots to Routes', desc: 'FIT 뮤지엄 협업 패션 전시 프로젝트', tag: 'Exhibition' },
-      { title: 'W Korea Campaign', desc: '브랜드 협업 및 행사 운영', tag: 'Marketing' },
-      { title: 'Editorial Direction', desc: '학과 간 협업 에디토리얼 비주얼 디렉션', tag: 'Direction' },
-      { title: 'Luxury Brand Events', desc: 'Hermès · Cartier · Valentino 이벤트 기록', tag: 'Content' },
+      { title: 'Graduation Fashion Film', desc: '한복을 Z세대의 시선으로 재해석한 패션 필름', tag: 'Film', image: 'lv_p1_img8.png' },
+      { title: 'Chanel Haute Couture', desc: '오뜨 꾸뛰르 및 하이 주얼리 이벤트', tag: 'Event', image: 'chanel_p1_img9.png' },
+      { title: 'Roots to Routes', desc: 'FIT 뮤지엄 협업 패션 전시 프로젝트', tag: 'Exhibition', image: 'chanel_p2_img6.png' },
+      { title: 'W Korea Campaign', desc: '브랜드 협업 및 행사 운영', tag: 'Marketing', image: 'lv_p1_img9.png' },
+      { title: 'Editorial Direction', desc: '학과 간 협업 에디토리얼 비주얼 디렉션', tag: 'Direction', image: 'lv_p2_img6.png' },
+      { title: 'Luxury Brand Events', desc: 'Hermès · Cartier · Valentino 이벤트 기록', tag: 'Content', image: 'chanel_p3_img0.png' },
     ],
     contactLabel: 'CONTACT',
     contactTitle: 'Get in Touch',
@@ -106,12 +106,12 @@ const content = {
     portfolioLabel: 'PORTFOLIO',
     portfolioTitle: 'Selected Works',
     portfolioItems: [
-      { title: 'Graduation Fashion Film', desc: 'A fashion film reinterpreting Hanbok through a Gen-Z lens', tag: 'Film' },
-      { title: 'Chanel Haute Couture', desc: 'Haute Couture & High Jewelry events', tag: 'Event' },
-      { title: 'Roots to Routes', desc: 'Fashion publication exhibition with FIT Museum', tag: 'Exhibition' },
-      { title: 'W Korea Campaign', desc: 'Brand collaboration & event management', tag: 'Marketing' },
-      { title: 'Editorial Direction', desc: 'Cross-departmental editorial visual direction', tag: 'Direction' },
-      { title: 'Luxury Brand Events', desc: 'Hermès · Cartier · Valentino event documentation', tag: 'Content' },
+      { title: 'Graduation Fashion Film', desc: 'A fashion film reinterpreting Hanbok through a Gen-Z lens', tag: 'Film', image: 'lv_p1_img8.png' },
+      { title: 'Chanel Haute Couture', desc: 'Haute Couture & High Jewelry events', tag: 'Event', image: 'chanel_p1_img9.png' },
+      { title: 'Roots to Routes', desc: 'Fashion publication exhibition with FIT Museum', tag: 'Exhibition', image: 'chanel_p2_img6.png' },
+      { title: 'W Korea Campaign', desc: 'Brand collaboration & event management', tag: 'Marketing', image: 'lv_p1_img9.png' },
+      { title: 'Editorial Direction', desc: 'Cross-departmental editorial visual direction', tag: 'Direction', image: 'lv_p2_img6.png' },
+      { title: 'Luxury Brand Events', desc: 'Hermès · Cartier · Valentino event documentation', tag: 'Content', image: 'chanel_p3_img0.png' },
     ],
     contactLabel: 'CONTACT',
     contactTitle: 'Get in Touch',
@@ -234,7 +234,7 @@ function App() {
           <h2 className="section-title">{t.aboutTitle}</h2>
           <div className="about-content">
             <div className="about-image">
-              <img src="/portrait.png" alt="Do Hyun Lee" className="about-portrait" />
+              <img src={`${import.meta.env.BASE_URL}portrait.png`} alt="Do Hyun Lee" className="about-portrait" />
             </div>
             <div className="about-text">
               <p className="about-intro">{t.aboutIntro}</p>
@@ -314,7 +314,7 @@ function App() {
               <div key={i} className="portfolio-card">
                 <div className="portfolio-image">
                   <div className="portfolio-image-inner">
-                    <span>IMAGE</span>
+                    <img src={`${import.meta.env.BASE_URL}${item.image}`} alt={item.title} />
                   </div>
                   <span className="portfolio-tag">{item.tag}</span>
                 </div>
